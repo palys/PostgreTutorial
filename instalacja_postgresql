@@ -1,0 +1,10 @@
+Fedora:
+	istalacja za pomocą yum:
+		sudo yum install postgresql-server postgresql-contrib
+	inicjalizacja bazy danych:
+		sudo postgresql-setup initdb
+	jednorazowy start bazy:
+		sudo systemctl start postgresql
+	każdorazowy, przy starcie systemu, start bazy:
+		sudo systemctl enable postgresql
+	

@@ -1,0 +1,6 @@
+ściągnąć z:
+	http://hibernate.org/orm/downloads/
+wypakować gdzieś:
+	sudo unzip hibernate-release-4.3.5.Final.zip -d /opt 
+dodać do build path jary z /required
+w eclips project->properties->java build path->libraries->add external

@@ -1,0 +1,24 @@
+INDEX VERSION 1.126+/home/tpalys/studia/sem6/bazy/postgreTutek/.metadata/.plugins/org.eclipse.jdt.core
+3790440865.index
+4026982597.index
+161558202.index
+2766446716.index
+1851590440.index
+4031326638.index
+2553999362.index
+3034802048.index
+258719364.index
+3432567238.index
+1731975382.index
+2098073159.index
+3574653076.index
+1507591565.index
+17996053.index
+728132567.index
+395880566.index
+2288453806.index
+1706814163.index
+3740022309.index
+2251976441.index
+4023934356.index
+1165936729.index
