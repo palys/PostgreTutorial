@@ -1,0 +1,73 @@
+package hibernateAndPostgreSQLTotorial;
+
+import java.sql.Date;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateTest {
+	
+	SessionFactory sessionFactory = null;
+	
+	public void setUp() throws Exception {
+	    // A SessionFactory is set up once for an application
+	    sessionFactory = new Configuration()
+	            .configure() // configures settings from hibernate.cfg.xml
+	            .buildSessionFactory();
+	}
+
+	public static void main(String[] args) {
+		HibernateTest test = new HibernateTest();
+		try {
+			test.setUp();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+
+	}
+	
+	public Integer addUser(String login, String city, Date birthDate){
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+		Integer userID = null;
+		try{
+			tx = session.beginTransaction();
+			User user = new User(login, city, birthDate);
+			userID = (Integer) session.save(user); 
+			tx.commit();
+		}catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}finally {
+			session.close(); 
+		}
+		return userID;
+	}
+	
+	public void listUsers( ){
+		Session session = factory.openSession();
+		Transaction tx = null;
+		try{
+			tx = session.beginTransaction();
+			List employees = session.createQuery("FROM Employee").list(); 
+			for (Iterator iterator = 
+					employees.iterator(); iterator.hasNext();){
+				Employee employee = (Employee) iterator.next(); 
+				System.out.print("First Name: " + employee.getFirstName()); 
+				System.out.print("  Last Name: " + employee.getLastName()); 
+				System.out.println("  Salary: " + employee.getSalary()); 
+			}
+			tx.commit();
+		}catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}finally {
+			session.close(); 
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+createdb testDB      nowa baza danych
+psql testDB 		 dostep do bazy danych
+
+create table user_table (
+id SERIAL,
+login varchar(80),
+city varchar(80),
+birth_date date
+);
+
+alter user postgres with encrypted password 'ala123';
+
+
+
+

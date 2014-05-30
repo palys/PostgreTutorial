@@ -8,3 +8,15 @@ Fedora:
 	każdorazowy, przy starcie systemu, start bazy:
 		sudo systemctl enable postgresql
 	
+	w eclipse dodac jar drivera z:
+	http://jdbc.postgresql.org/download.html
+	
+	w pliku pg_hba.conf (w /var/lib/pgsql/data lub w /...)
+	zminiamy:
+	host    all             all             127.0.0.1/32            ident
+	na:
+	host    all             all             127.0.0.1/32            md5
+
+
+	zmianiamy hasło w bazie:
+	alter user postgres with password 'twoje_haslo';

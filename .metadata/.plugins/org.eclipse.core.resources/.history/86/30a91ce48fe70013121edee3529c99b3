@@ -1,0 +1,28 @@
+package hibernateAndPostgreSQLTotorial;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateTest {
+	
+	SessionFactory sessionFactory = null;
+	
+	public void setUp() throws Exception {
+	    // A SessionFactory is set up once for an application
+	    sessionFactory = new Configuration()
+	            .configure() // configures settings from hibernate.cfg.xml
+	            .buildSessionFactory();
+	}
+
+	public static void main(String[] args) {
+		HibernateTest test = new HibernateTest();
+		try {
+			test.setUp();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
