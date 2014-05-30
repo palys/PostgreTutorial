@@ -48,11 +48,7 @@ public class HibernateTest {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			if (test.sessionFactory != null) {
-				test.sessionFactory.close();
-			}
-		}
+		} 
 
 	}
 	
